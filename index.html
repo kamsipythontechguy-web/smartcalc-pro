@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Smart Calculator Pro - a free calculator with scientific functions and calculation history.">
+  <title>Smart Calculator Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">∑</div>
+        <div>
+          <h1>SmartCalc <span>Pro</span></h1>
+          <p>YOUR SMART CALCULATION TOOL</p>
+        </div>
+      </div>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">☀</button>
+    </header>
+        
+
+    <section class="calculator">
+      <div class="display">
+        <div class="display-top">
+          <span id="status">STANDARD</span>
+          <button id="copyResult" class="copy-btn">COPY</button>
+        </div>
+        <div id="expression" class="expression"></div>
+        <output id="screen" aria-live="polite">0</output>
+      </div>
+
+      <div class="scientific-grid">
+        <button data-science="sin">sin</button>
+        <button data-science="cos">cos</button>
+        <button data-science="tan">tan</button>
+        <button data-science="sqrt">√x</button>
+        <button data-science="square">x²</button>
+        <button data-science="pi">π</button>
+      </div>
+
+      <div class="buttons">
+        <button class="utility" data-action="clear">AC</button>
+        <button class="utility" data-action="delete">DEL</button>
+        <button class="utility" data-action="percent">%</button>
+        <button class="operator" data-operator="/">÷</button>
+
+        <button data-number="7">7</button>
+        <button data-number="8">8</button>
+        <button data-number="9">9</button>
+        <button class="operator" data-operator="*">×</button>
+
+        <button data-number="4">4</button>
+        <button data-number="5">5</button>
+        <button data-number="6">6</button>
+        <button class="operator" data-operator="-">−</button>
+
+        <button data-number="1">1</button>
+        <button data-number="2">2</button>
+        <button data-number="3">3</button>
+        <button class="operator" data-operator="+">+</button>
+
+        <button data-action="sign">+/−</button>
+        <button data-number="0">0</button>
+        <button data-action="decimal">.</button>
+        <button class="equals" data-action="calculate">=</button>
+      </div>
+    </section>
+
+    <section class="history-section">
+      <div class="section-heading">
+        <div>
+          <h2>Calculation history</h2>
+          <p>Your recent calculations</p>
+        </div>
+        <button id="clearHistory" class="text-btn">Clear all</button>
+      </div>
+
+      <div id="historyList" class="history-list">
+        <div class="empty-state">
+          <span>↻</span>
+          <p>Your calculations will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span class="online-dot"></span>
+      SMARTCALC PRO · BUILT WITH JAVASCRIPT
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
